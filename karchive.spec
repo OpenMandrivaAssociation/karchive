@@ -17,6 +17,7 @@ BuildRequires: qmake5
 BuildRequires: bzip2-devel
 BuildRequires: pkgconfig(liblzma)
 BuildRequires: pkgconfig(zlib)
+BuildRequires: extra-cmake-modules5
 
 %description
 The KDE Frameworks 5 archiving library.
