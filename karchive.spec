@@ -1,11 +1,11 @@
-%define major 5
+%define major 4
 %define libname %mklibname KF5Archive %{major}
 %define devname %mklibname KF5Archive -d
 %define debug_package %{nil}
 
 Name: karchive
-Version: 4.95.0
-Release: 2
+Version: 4.96.0
+Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/4.95.0/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 archiving library
 URL: http://kde.org/
