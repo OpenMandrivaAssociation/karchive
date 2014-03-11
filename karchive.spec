@@ -1,12 +1,12 @@
-%define major 4
+%define major 5
 %define libname %mklibname KF5Archive %{major}
 %define devname %mklibname KF5Archive -d
 %define debug_package %{nil}
 
 Name: karchive
-Version: 4.96.0
+Version: 4.97.0
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/4.95.0/%{name}-%{version}.tar.xz
+Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 archiving library
 URL: http://kde.org/
 License: GPL
@@ -53,7 +53,8 @@ Development files (Headers etc.) for %{name}.
 %makeinstall_std -C build
 
 %files -n %{libname}
-%{_libdir}/*.so.%{major}*
+%{_libdir}/*.so.%{major}
+%{_libdir}/*.so.%{version}
 
 %files -n %{devname}
 %{_includedir}/*
