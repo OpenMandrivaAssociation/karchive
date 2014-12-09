@@ -13,6 +13,7 @@ URL: http://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake
+BuildRequires: ninja
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: qmake5
@@ -45,13 +46,14 @@ Development files (Headers etc.) for %{name}.
 
 %prep
 %setup -q
-%cmake
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
-%make -C build
+ninja -C build
 
 %install
-%makeinstall_std -C build
+DESTDIR="%{buildroot}" ninja -C build install
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
@@ -60,5 +62,5 @@ Development files (Headers etc.) for %{name}.
 %files -n %{devname}
 %{_includedir}/*
 %{_libdir}/*.so
-%{_prefix}/mkspecs
+%{_libdir}/qt5/mkspecs
 %{_libdir}/cmake/KF5Archive
