@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name:		karchive
-Version:	5.36.0
+Version:	5.37.0
 Release:	1
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary:	The KDE Frameworks 5 archiving library
@@ -55,6 +55,7 @@ Development files (Headers etc.) for %{name}.
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
 %{_libdir}/*.so.%{version}
+%{_sysconfdir}/xdg/karchive.categories
 
 %files -n %{devname}
 %{_includedir}/*
