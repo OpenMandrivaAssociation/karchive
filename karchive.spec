@@ -21,6 +21,7 @@ BuildRequires:	pkgconfig(liblzma)
 BuildRequires:	pkgconfig(zlib)
 # For QCH format docs
 BuildRequires: qt5-assistant
+BuildRequires: doxygen
 
 %description
 The KDE Frameworks 5 archiving library.
