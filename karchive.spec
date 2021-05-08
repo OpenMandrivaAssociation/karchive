@@ -5,7 +5,7 @@
 
 Name:		karchive
 Version:	5.82.0
-Release:	1
+Release:	2
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary:	The KDE Frameworks 5 archiving library
 URL:		http://kde.org/
@@ -15,9 +15,10 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Network)
 BuildRequires:	pkgconfig(Qt5Test)
-BuildRequires:	bzip2-devel
+BuildRequires:	pkgconfig(bzip2)
 BuildRequires:	pkgconfig(liblzma)
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:	pkgconfig(libzstd)
 # For QCH format docs
 BuildRequires: qt5-assistant
 BuildRequires: doxygen
