@@ -4,8 +4,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name:		karchive
-Version:	5.99.0
-Release:	2
+Version:	5.100.0
+Release:	1
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary:	The KDE Frameworks 5 archiving library
 URL:		http://kde.org/
@@ -62,8 +62,9 @@ Developer documentation for %{name} for use with Qt Assistant
 
 %install
 %ninja_install -C build
+%find_lang karchive5_qt --with-qt --all-name
 
-%files -n %{libname}
+%files -n %{libname} -f karchive5_qt.lang
 %{_libdir}/*.so.%{major}
 %{_libdir}/*.so.%{version}
 %{_datadir}/qlogging-categories5/karchive.categories
